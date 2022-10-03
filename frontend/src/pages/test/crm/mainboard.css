@@ -1,0 +1,70 @@
+.main {
+    width: 1400px;
+    height: 700px;
+    background-color: grey;
+}
+    .main-header {
+        width: 100%;
+        height: 64px;
+        background-color: rgb(3, 4, 37);
+        padding: 10px 0;
+        text-align: center;
+    }
+        .main-header-logo {
+            height: 100%;
+            width: 40%;
+            padding: 10px 0;
+            float: left;
+            /* background-color: yellowgreen; */
+            color: white;
+            font-weight: bold;
+        }
+        .main-header-profile {
+            height: 100%;
+            width: 30%;
+            padding: 10px 0;
+            float: left;
+            /* background-color: red; */
+            text-align: right;
+            color: white;
+            font-weight: bold;
+        }
+        .main-header-settings {
+            height: 100%;
+            width: 30%;
+            padding: 10px 10px;
+            float: left;
+            /* background-color: blue; */
+            text-align: right;
+            color: white;
+            font-weight: bold;
+        }
+    
+    .main-message {
+        width: 100%;
+        height: 95%;
+        padding: 10px;
+        background-color: rgb(187, 185, 185);
+    }
+        .main-message-list {
+            float: left;
+            width: 480px;
+            height: 100%;
+            padding: 0 5px;
+            background-color: whitesmoke;
+            overflow: auto;
+        }
+            .main-message-list-item {
+                /* padding: 100px  50px; */
+                margin: 0  10px;
+                padding: 20px 10px;
+                background-color: white;
+            }
+
+        .main-message-content {
+            float: left;
+            width: 600px;
+            height: 100%;
+            background-color: white;
+            padding: 20px 20px;
+        }

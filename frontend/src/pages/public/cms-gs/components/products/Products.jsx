@@ -8,6 +8,11 @@ import { PlusOutlined } from '@ant-design/icons';
 import FileUpload from '../../fileUploading'
 
 class Product extends Component {
+
+    uploadFile = (p) => {
+        console.log("Upload File function in Products...\n", p)
+    }
+
     render() {
 
         const title = "Level 1 Category"
@@ -47,6 +52,20 @@ class Product extends Component {
                 counts: 324,
                 price: 5.99
             },
+            {
+                key: "5",
+                productName: "Pork",
+                categoryName: "Meat",
+                counts: 155,
+                price: 4.99
+            },
+            {
+                key: "6",
+                productName: "Chicken",
+                categoryName: "Meat",
+                counts: 230,
+                price: 3.99
+            },
             
         ]
 
@@ -66,7 +85,22 @@ class Product extends Component {
             {
                 title: "CategoryName",
                 dataIndex: "categoryName",
-                key: "categoryName"
+                key: "categoryName",
+                filters: [
+                    {
+                        text: "Fruit",
+                        value: "Fruit"
+                    },
+                    {
+                        text: "Veges",
+                        value: "Veges"
+                    },
+                    {
+                        text: "Meat",
+                        value: "Meat"
+                    },
+                ],
+                onFilter: (value, record) => record.categoryName.indexOf(value) === 0,
             },
             {
                 title: "Counts",
@@ -76,7 +110,8 @@ class Product extends Component {
             {
                 title: "Price",
                 dataIndex: "price",
-                key: "price"
+                key: "price",
+                sorter: (a, b) => a.price - b.price
             },
             {
                 title: "Options",
@@ -88,13 +123,21 @@ class Product extends Component {
                 </a>
             }
         ]
+        const onChange = (pagination, filters, sorter, extra) => {
+            console.log('params', pagination, filters, sorter, extra);
+          };
         return (
             <div>
                 <h2> Product </h2>
                 <Card title={title} extra={extra}>
-                    <Table dataSource={datasource} columns={columns}></Table>
+                    <Table 
+                        dataSource={datasource} 
+                        columns={columns}
+                        pagination={false}
+                        scroll={{x:1500, y:300}}
+                        onChange={onChange}></Table>
                 </Card>
-                <FileUpload />
+                <FileUpload updateFilesCb={this.uploadFile}/>
 
             </div>
         )

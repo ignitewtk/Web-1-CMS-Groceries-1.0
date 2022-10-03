@@ -1,4 +1,4 @@
-import { HomeOutlined, BarChartOutlined, MenuOutlined, UserOutlined, TagOutlined, PieChartOutlined, RadarChartOutlined } from '@ant-design/icons';
+import { HomeOutlined, BarChartOutlined, MenuOutlined, UserOutlined, TagOutlined, PieChartOutlined, RadarChartOutlined, ShoppingOutlined } from '@ant-design/icons';
 import {Link} from 'react-router-dom'
 const menuList = [
     {
@@ -14,7 +14,7 @@ const menuList = [
     {
         label: 'Products',
         key: '/products',
-        icon: <MenuOutlined/>,
+        icon: <ShoppingOutlined />,
         children: [
             {
                 // label: 'Category',

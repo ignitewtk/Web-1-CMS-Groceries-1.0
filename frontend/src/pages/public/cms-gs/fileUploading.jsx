@@ -1,14 +1,8 @@
 // https://juejin.cn/post/7058093329057546248
 
-
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, SubMenu } from "antd";
-
-import { BrowserRouter, Redirect, Routes, Route, Link, useMatch, Outlet } from 'react-router-dom'
-
+import { reqAddFile } from '../../../api';
 import React, {Component, useRef, useState} from 'react'
 
-import menuList from './config/menuConfig'
 import './mainboard2.css'
 
 
@@ -53,13 +47,26 @@ const FileUpload = ({
     }
     
     const handleNewFileUpload = (e) => {
-        const { files: newFiles } = e.target
-        if (newFiles.length) {
-            let updatedFiles = addNewFiles(newFiles)
-            setFiles(updatedFiles)
-            callUpdateFilesCb(updatedFiles)
+        
+        // const { files: newFiles} = e.target
+        // console.log(newFiles[0].name, newFiles[0].file, newFiles[0].size, newFiles[0].type)
+        
+        // if (newFiles.length) {
+        //     let updatedFiles = addNewFiles(newFiles)
+        //     setFiles(updatedFiles)
+        //     callUpdateFilesCb(updatedFiles)
 
-        }
+        //     console.log("submit files")
+        //     reqAddFile(updatedFiles)
+        // }
+        
+        const newFiles = e.target.files
+        let data = new FormData()
+        data.append('file', newFiles[0])
+        // console.log(newFiles[0].name, newFiles[0].file, newFiles[0].size, newFiles[0].type)
+        // console.log(data.get('file').type)
+        reqAddFile(data)
+
     }
 
     return (
@@ -69,7 +76,7 @@ const FileUpload = ({
             <button type="button">
                 <span> Upload </span>
             </button>
-            <input type="file" ref={fileInputField} onChange={handleNewFileUpload}/>
+            <input type="file" enctype="multipart/form-data" ref={fileInputField} onChange={handleNewFileUpload}/>
             <span> File preview </span>
             <div> 
                 {

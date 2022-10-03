@@ -1,0 +1,23 @@
+
+.Email-list {
+    display: inline;
+    overflow: auto;
+    float: left;
+  }
+  
+  
+  .Email-content {
+    display: inline;
+  }
+  
+  .Message-list {
+    display: inline;
+    overflow: auto;
+    float: left;
+  }
+  
+  
+  .Message-content {
+    display: inline;
+  }
+  

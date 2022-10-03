@@ -79,7 +79,7 @@ class MainBoard2 extends Component  {
         return(
             <Layout>
                 <Header className="header">
-                    <div className="logo"></div>
+                    <div className="logo"> LOGO </div>
                     {/* <Menu 
                         theme="dark"
                         mode='horizontal'
@@ -98,7 +98,13 @@ class MainBoard2 extends Component  {
                     items={items2}
                     />
                 </Layout> */}
-                
+                <Layout>
+                    <div style={{"text-align": "right", "margin":"10px 40px 0 0"}}>
+                        <span> Welcome, admin </span>
+                        <a href="javascript:"> Log out </a>
+                    </div>
+                    
+                </Layout>
                 <Layout>
                     <Sider width={200} className="site-layout-background">
                         <Menu
