@@ -17,9 +17,10 @@ const onChange = (key) => {
     console.log(key)
 }
 
-class Product extends React.Component {
+class ProductDetail extends React.Component {
     
     render() {
+
         return (
             <div style={{wdith:"300px", display:"inline", margin: "20px 10px"}}>
                 <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"/>
@@ -33,6 +34,7 @@ class Product extends React.Component {
                     {/* <Comment /> */}
                 </div>
 
+
                 <div> Origin Price </div>
                 <div> Promotion Price </div>
                 <Collapse  style={{width:"300px"}} defaultActiveKey={['1']} onChange={onChange}>
@@ -45,4 +47,4 @@ class Product extends React.Component {
     }
 }
 
-export default Product;
+export default ProductDetail;

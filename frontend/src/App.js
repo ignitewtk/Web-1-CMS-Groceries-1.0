@@ -2,7 +2,7 @@ import './App.css';
 import React from "react"
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Demo01 from './pages/test/demo/demo01'
-import Mall from './pages/test/mall/mall'
+import Theme from './pages/test/mall/theme'
 import { Shelves } from './pages/test/mall/shelves'
 import Login from './pages/public/login/login'
 import MainBoard from './pages/test/crm/mainboard'
@@ -18,7 +18,7 @@ class App extends React.Component {
     <BrowserRouter>
       <Routes>
         <Route path='/demo01' element={<Demo01 />}/>
-        <Route path='/mall' element={<Mall />}/>
+        <Route path='/mall' element={<Theme />}/>
         <Route path='/shelves' element={<Shelves />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/crm' element={<MainBoard />}/>

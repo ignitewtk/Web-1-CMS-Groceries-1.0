@@ -1,12 +1,12 @@
 
 import React from "react"
 import Product from "./product";
-import { Carousel, Button } from 'antd'
+import { Carousel, Button, Pagination,  Select, Row, Col, Checkbox} from 'antd'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout, selectIsLogin, selectUsername } from '../../public/redux/accountSlice'
 
-
+const {Option} = Select
 
 
 const contentStyle = {
@@ -51,18 +51,81 @@ export function Shelves() {
                 </div>
             </Carousel>
             <div> Navigator </div>
-            <div> Filter and Search bar </div>
-            <ul>
-                <li> Product 1 </li> 
-            </ul>
             <div> 
-                <Product />
-                <Product />
+                <Row> Filter and Search bar </Row> 
+                <Row>
+                    <Select
+                        defaultValue={"price+"}
+                        style={{
+                            width: 120,
+                        }}
+                    >
+                        <Option Value="default"> Sort By Price: default </Option>
+                        <Option Value="price+"> Sort By Price: low to high </Option>
+                        <Option Value="price-"> Sort By Price: high to low </Option>
+                    </Select>
+                    <Select
+                        defaultValue={"default"}
+                        style={{
+                            width: 120,
+                        }}
+                    >
+                        <Option Value="default"> Sort By Time: default </Option>
+                        <Option Value="time+"> Sort By Time: Oldest </Option>
+                        <Option Value="time-"> Sort By Time: Newest </Option>
+                    </Select>
+                    <Select
+                        defaultValue={"default"}
+                        style={{
+                            width: 120,
+                        }}
+                    >
+                        <Option Value="default"> Sort By Rating: default </Option>
+                        <Option Value="rating+"> Sort By Rating: low to high </Option>
+                        <Option Value="rating-"> Sort By Rating: high to low </Option>
+                    </Select>
+                </Row>
+                <Row>
+                    <Col span={6}>
+                        <Row>
+                            <Row><Checkbox> Checkbox 1 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 2 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 3 </Checkbox></Row>
+                        </Row>
+                        <Row>
+                            <Row><Checkbox> Checkbox 1 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 2 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 3 </Checkbox></Row>
+                        </Row>
+                        <Row>
+                            <Row><Checkbox> Checkbox 1 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 2 </Checkbox></Row>
+                            <Row><Checkbox> Checkbox 3 </Checkbox></Row>
+                        </Row>
+                    </Col>
+                    <Col span={18}>
+                        <Row>
+                            <Col span={8}><Product /></Col>
+                            <Col span={8}><Product /></Col>
+                            <Col span={8}><Product /></Col>
+                        </Row>
+                        <Row>
+                            <Col span={8}><Product /></Col>
+                            <Col span={8}><Product /></Col>
+                            <Col span={8}><Product /></Col>
+                        </Row>
+                        <Row>
+                        <Pagination 
+                            total={12}
+                            showSizeChanger
+                            showQuickJumper
+                            showTotal={(total)=> `Total ${total} items`}
+                        />
+                        </Row>
+                    </Col>
+                </Row>
+                
             </div>
-            
-            <div> Section 2 </div>
-            <div> Section 3 </div>
-            <div> About </div>
         </div>
     )
 }
