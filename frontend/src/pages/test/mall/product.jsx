@@ -1,7 +1,7 @@
 
 import React from "react"
-import { Rate, Collapse, Image, Comment, Avatar, Tooltip } from 'antd'
-import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-design/icons';
+import { Rate, Collapse, Image} from 'antd'
+
 
 import 'antd/dist/antd.css'
 
@@ -18,23 +18,37 @@ const onChange = (key) => {
 }
 
 class Product extends React.Component {
-    
+    constructor (props) {
+        super(props)
+        if (props.productDetail) {
+            this.productDetail = props.productDetail
+        } else {
+            this.productDetail = {
+                name: "Product name",
+                originPrice: 2,
+                discountPrice: 1.5,
+                rating: 3,
+                img: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+            }
+        }
+    }
+
     render() {
         return (
             <div style={{wdith:"300px", display:"inline", margin: "20px 10px"}}>
-                <Image width={200} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"/>
-                <div> Product Name </div>
+                <Image width={200} src={this.productDetail.img} />
+                <div>  {this.productDetail.name} </div>
                 <div> Description </div>
                 <div> Sales </div>
-                <Rate disabled defaultValue={3}> </Rate>
+                <Rate disabled defaultValue={this.productDetail.rating}> </Rate>
                 
                 <div>
                     <div> Review </div>
-                    {/* <Comment /> */}
                 </div>
 
-                <div> Origin Price </div>
-                <div> Promotion Price </div>
+                <div> $ <span style={{color:"red", "font-size":"18px", "font-weight":"bold"}}>{this.productDetail.discountPrice}</span> </div>
+                <div> RRP: <s>${this.productDetail.originPrice}</s> </div>
+                
                 <Collapse  style={{width:"300px"}} defaultActiveKey={['1']} onChange={onChange}>
                     <Panel header="This is Specification of Product 1">
                         <p> {text} </p>

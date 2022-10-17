@@ -6,6 +6,10 @@ import { Carousel, Button, Pagination,  Select, Row, Col, Checkbox} from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 import { login, logout, selectIsLogin, selectUsername } from '../../public/redux/accountSlice'
 
+import products from './config/products'
+
+
+
 const {Option} = Select
 
 
@@ -104,6 +108,42 @@ export function Shelves() {
                         </Row>
                     </Col>
                     <Col span={18}>
+                        <Row>
+                            <Product key="pork" productDetail={
+                                {
+                                    name: "Pork Loin",
+                                    originPrice: 10.56,
+                                    discountPrice: 8.99,
+                                    rating: 3,
+                                    img: require("./img/PorkLoin.jpg"),
+                                }
+                            }/>
+                            <Product key="pork" productDetail={
+                                {
+                                    name: "Pork Loin",
+                                    originPrice: 2.99,
+                                    discountPrice: 2.5,
+                                    rating: 4,
+                                    img: require("./img/Asian Baby Bulk Choy.jpg"),
+                                }
+                            }/>
+                            <Product key="pork" productDetail={
+                                {
+                                    name: "Pork Loin",
+                                    originPrice: 7.88,
+                                    discountPrice: 6.99,
+                                    rating: 5,
+                                    img: require("./img/Fresh Eggs.jpg"),
+                                }
+                            }/>
+                        </Row>
+                        {/* <Row>
+                            {
+                                products.map(item => (
+                                    <Product key={item.name} productDetail={item}/>
+                                ))
+                            }
+                        </Row> */}
                         <Row>
                             <Col span={8}><Product /></Col>
                             <Col span={8}><Product /></Col>
