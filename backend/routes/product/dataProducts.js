@@ -5,6 +5,8 @@ const productNames = [
         originPrice: 10.56,
         discountPrice: 8.99,
         rating: 3,
+        category1: 'Meat',
+        category2: 'Pork',
         img: require("../../public/images/products/PorkLoin.jpg"),
     },
     {
@@ -12,6 +14,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Veges',
+        category2: 'Green',
         img: require("../../public/images/products/Asian Baby Bulk Choy.jpg"),
     },
     {
@@ -19,6 +23,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Dairy',
+        category2: 'Egg',
         img: require("../../public/images/products/Fresh Eggs.jpg"),
     },
     {
@@ -26,6 +32,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Meat',
+        category2: 'Chicken',
         img: require("../../public/images/products/Chicken Wings.jpg"),
     },
     {
@@ -33,6 +41,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Fruit',
+        category2: 'Grape',
         img: require("../../public/images/products/Green Grapes.jpg"),
     },
     {
@@ -40,6 +50,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Fruit',
+        category2: 'Apple',
         img: require("../../public/images/products/Fuji Apples.jpg"),
     },
     {
@@ -47,6 +59,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Fruit',
+        category2: 'Mango',
         img: require("../../public/images/products/Keiit Mango.jpg"),
     },
     {
@@ -54,6 +68,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Fruit',
+        category2: 'Apple',
         img: require("../../public/images/products/Royal Gala Apples.jpg"),
     },
     {
@@ -61,6 +77,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Veges',
+        category2: 'Tomato',
         img: require("../../public/images/products/Tomatoes.jpg"),
     },
     {
@@ -68,6 +86,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Meat',
+        category2: 'Chicken',
         img: require("../../public/images/products/Chicken Drumpstick.jpg"),
     },
     {
@@ -75,6 +95,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Veges',
+        category2: 'Green',
         img: require("../../public/images/products/Japanese Bulk Choy.jpg"),
     },
     {
@@ -82,6 +104,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Veges',
+        category2: 'Potato',
         img: require("../../public/images/products/Creamy Potato.jpg"),
     },
     {
@@ -89,6 +113,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Veges',
+        category2: 'Potato',
         img: require("../../public/images/products/Washed Potatoes.jpg"),
     },
     {
@@ -96,6 +122,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Fruit',
+        category2: 'Grape',
         img: require("../../public/images/products/Seedless Grapes.jpg"),
     },
     {
@@ -103,6 +131,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Fruit',
+        category2: 'Grape',
         img: require("../../public/images/products/Seedless Finger Grapes.jpg"),
     },
     {
@@ -110,6 +140,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Meat',
+        category2: 'Pork',
         img: require("../../public/images/products/Pork Ribs.jpg"),
     },
     {
@@ -117,6 +149,8 @@ const productNames = [
         originPrice: 7.88,
         discountPrice: 6.99,
         rating: 5,
+        category1: 'Meat',
+        category2: 'Steak',
         img: require("../../public/images/products/Frozen T-bones Steak.jpg"),
     },
     {
@@ -124,6 +158,8 @@ const productNames = [
         originPrice: 2.99,
         discountPrice: 2.5,
         rating: 4,
+        category1: 'Meat',
+        category2: 'Steak',
         img: require("../../public/images/products/Fresh Frozen Beef Steak.jpg"),
     },
 ]

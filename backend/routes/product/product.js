@@ -1,6 +1,5 @@
 
 var express = require('express');
-// var products = require('./configProducts')
 const fs = require('fs')
 const path = require('path')
 const url = require('url');
