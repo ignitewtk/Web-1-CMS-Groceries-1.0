@@ -1,5 +1,5 @@
 
-const productNames = [
+const dataProducts = [
     {
         name: "Pork Loin",
         originPrice: 10.56,
@@ -7,7 +7,7 @@ const productNames = [
         rating: 3,
         category1: 'Meat',
         category2: 'Pork',
-        img: require("../../public/images/products/PorkLoin.jpg"),
+        src: "/public/images/products/PorkLoin.jpg"
     },
     {
         name: "Asian Baby Bulk Choy",
@@ -16,7 +16,7 @@ const productNames = [
         rating: 4,
         category1: 'Veges',
         category2: 'Green',
-        img: require("../../public/images/products/Asian Baby Bulk Choy.jpg"),
+        src: "/public/images/products/Asian Baby Bulk Choy.jpg"
     },
     {
         name: "Fresh Eggs",
@@ -25,7 +25,7 @@ const productNames = [
         rating: 5,
         category1: 'Dairy',
         category2: 'Egg',
-        img: require("../../public/images/products/Fresh Eggs.jpg"),
+        src: "/public/images/products/Fresh Eggs.jpg"
     },
     {
         name: "Chicken Wings",
@@ -34,7 +34,7 @@ const productNames = [
         rating: 5,
         category1: 'Meat',
         category2: 'Chicken',
-        img: require("../../public/images/products/Chicken Wings.jpg"),
+        src: "/public/images/products/Chicken Wings.jpg"
     },
     {
         name: "Green Grapes",
@@ -43,7 +43,7 @@ const productNames = [
         rating: 4,
         category1: 'Fruit',
         category2: 'Grape',
-        img: require("../../public/images/products/Green Grapes.jpg"),
+        src: "/public/images/products/Green Grapes.jpg"
     },
     {
         name: "Fuji Apples",
@@ -52,7 +52,7 @@ const productNames = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Apple',
-        img: require("../../public/images/products/Fuji Apples.jpg"),
+        src: "/public/images/products/Fuji Apples.jpg"
     },
     {
         name: "Keitt Mango",
@@ -61,7 +61,7 @@ const productNames = [
         rating: 4,
         category1: 'Fruit',
         category2: 'Mango',
-        img: require("../../public/images/products/Keiit Mango.jpg"),
+        src: "/public/images/products/Keiit Mango.jpg"
     },
     {
         name: "Royal Gala Apples",
@@ -70,7 +70,7 @@ const productNames = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Apple',
-        img: require("../../public/images/products/Royal Gala Apples.jpg"),
+        src: "/public/images/products/Royal Gala Apples.jpg"
     },
     {
         name: "Tomatoes",
@@ -79,7 +79,7 @@ const productNames = [
         rating: 4,
         category1: 'Veges',
         category2: 'Tomato',
-        img: require("../../public/images/products/Tomatoes.jpg"),
+        src: "/public/images/products/Tomatoes.jpg"
     },
     {
         name: "Chicken Drumpstick",
@@ -88,7 +88,7 @@ const productNames = [
         rating: 5,
         category1: 'Meat',
         category2: 'Chicken',
-        img: require("../../public/images/products/Chicken Drumpstick.jpg"),
+        src: "/public/images/products/Chicken Drumpstick.jpg"
     },
     {
         name: "Japanese Bulk Choy",
@@ -97,7 +97,7 @@ const productNames = [
         rating: 5,
         category1: 'Veges',
         category2: 'Green',
-        img: require("../../public/images/products/Japanese Bulk Choy.jpg"),
+        src: "/public/images/products/Japanese Bulk Choy.jpg"
     },
     {
         name: "Creamy Potato",
@@ -106,7 +106,7 @@ const productNames = [
         rating: 4,
         category1: 'Veges',
         category2: 'Potato',
-        img: require("../../public/images/products/Creamy Potato.jpg"),
+        src: "/public/images/products/Creamy Potato.jpg"
     },
     {
         name: "Washed Potatoes",
@@ -115,7 +115,7 @@ const productNames = [
         rating: 5,
         category1: 'Veges',
         category2: 'Potato',
-        img: require("../../public/images/products/Washed Potatoes.jpg"),
+        src: "/public/images/products/Washed Potatoes.jpg"
     },
     {
         name: "Seedless Grapes",
@@ -124,7 +124,7 @@ const productNames = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Grape',
-        img: require("../../public/images/products/Seedless Grapes.jpg"),
+        src: "/public/images/products/Seedless Grapes.jpg"
     },
     {
         name: "Seedless Finger Grapes",
@@ -133,7 +133,7 @@ const productNames = [
         rating: 5,
         category1: 'Fruit',
         category2: 'Grape',
-        img: require("../../public/images/products/Seedless Finger Grapes.jpg"),
+        src: "/public/images/products/Seedless Finger Grapes.jpg"
     },
     {
         name: "Pork Ribs",
@@ -142,7 +142,7 @@ const productNames = [
         rating: 4,
         category1: 'Meat',
         category2: 'Pork',
-        img: require("../../public/images/products/Pork Ribs.jpg"),
+        src: "/public/images/products/Pork Ribs.jpg"
     },
     {
         name: "Frozen T-bones Steak",
@@ -151,7 +151,7 @@ const productNames = [
         rating: 5,
         category1: 'Meat',
         category2: 'Steak',
-        img: require("../../public/images/products/Frozen T-bones Steak.jpg"),
+        src: "/public/images/products/Frozen T-bones Steak.jpg"
     },
     {
         name: "Fresh Frozen Beef Steak",
@@ -160,28 +160,11 @@ const productNames = [
         rating: 4,
         category1: 'Meat',
         category2: 'Steak',
-        img: require("../../public/images/products/Fresh Frozen Beef Steak.jpg"),
+        src: "/public/images/products/Fresh Frozen Beef Steak.jpg"
     },
 ]
 
-
-function getProducts(productNames) {
-    var products = []
-    for (var i=0; i<productNames.length; i++) {
-        products.push(
-            {
-                name: productNames[i],
-                originPrice: 2,
-                discountPrice: 1.5,
-                rating: 4.4,
-            })
-    }
-
-    return products
-}
-const products = getProducts(productNames)
-
-module.exports = productNames;
+module.exports = dataProducts;
 
 
 // const productNames = [

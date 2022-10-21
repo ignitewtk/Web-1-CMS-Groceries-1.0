@@ -1,39 +1,28 @@
-
 var express = require('express');
-const fs = require('fs')
-const path = require('path')
-const url = require('url');
-const { response } = require('../../app');
-
-
-var router = express.Router();
-
+const { datapipelines } = require('googleapis/build/src/apis/datapipelines');
+var router = express.Router()
+var dataProducts = require('./dataProducts')
 
 /* get products list. */
 router.post('/list', function(req, res, next) {
-    const products = [
-      {
-          name: "Pork Loin",
-          originPrice: 10.56,
-          discountPrice: 8.99,
-          rating: 3,
-          // img: fs.createReadStream(path.resolve("../public/images/products/PorkLoin.jpg"))
-          
-      },
-      {
-          name: "Asian Baby Bulk Choy",
-          originPrice: 2.99,
-          discountPrice: 2.5,
-          rating: 4,
-          // img: fs.createReadStream(path.resolve("../public/images/products/Asian Baby Bulk Choy.jpg")),
+    var products = []
+    for (let i=0; i<dataProducts.length; i++) {
+      if (dataProducts[i].category1 === req.body.category | req.body.category === 'All') {
+        if (dataProducts[i].rating >= req.body.rating) {
+          if (dataProducts[i].discountPrice >=  req.body.price) {
+            products.push(dataProducts[i])
+          }
+        }
       }
-    ]
-    console.log("(/list)req body:", req.body)
+    } 
+    // let url = `/public/images/products/${req.body.productName}`
     res.send(products);
 });
 
 
-/* get products image. */
+/* get products image.
+  Test URL: http://localhost:3050/product/image?productName=Tomatoes.jpg
+*/
 router.post('/image', function(req, res, next) {
 
   console.log("(/image) req body:", req.body)
