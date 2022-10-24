@@ -2,25 +2,32 @@
 
 ## Introduction
 
-This is a CMS (Content Management System) project with separate front-end and backend component. 
+This is a CMS (Content Management System) project.
 
 ## Demo Website
 
 To be added.
 
 ## Features
-- Login, input validation & 3rd-party Authentication components;
-- Sidebar menu navigation component;
-- Table and list display function;
-- Statistic and graph visualization function;
+
+- ``Classic CMS Layout`` side bar menu routing to different modules, including account management, product and category management, or statistics visualisation.
+- ``Account``  account management such as sign in, sign up, input validation, 3rd-party Authentication components, and profile image uploading.
+- ``Product``  prodcut list or table display, reordering and filtering products, modifying product data, and pagination loading.
+- ``Visualisation``  Statistic and graph visualization function.
 
 ## Skill Stacks
 
-#### Front-end tools
-ReactJS, Redux, Reactstrap, Ant Design, React-router, Echarts, Axios
+The system uses _React_ as front-end framework, combined with Redux for state management. 
 
-#### Back-end tools
- NodeJS, Express, MySQL, Docker
+The system is configured with _Nginx_ for load balance and as proxy for passing cross-field requests.
+
+The system is containerised and can be run on _Docker_.
+
+``Front-end`` _ReactJS, Redux, Reactstrap, Ant Design, React-router, Echarts, Axios_
+
+
+``Back-end`` _NodeJS, Express, MySQL, Docker_.
+
 
 ## Architecture
 
