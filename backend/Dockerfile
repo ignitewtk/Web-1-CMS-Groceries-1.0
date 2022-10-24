@@ -12,3 +12,5 @@ RUN npm install --production
 COPY . .
 
 CMD ["node", "./bin/www"]
+
+EXPOSE 3050

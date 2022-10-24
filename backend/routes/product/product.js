@@ -3,8 +3,12 @@ const { datapipelines } = require('googleapis/build/src/apis/datapipelines');
 var router = express.Router()
 var dataProducts = require('./dataProducts')
 
-/* get products list. */
+/* 
+  get products list. 
+  http://localhost:3050/api/product/list
+  */
 router.post('/list', function(req, res, next) {
+  console.log("(product/list) req body:", req.body)
     var products = []
     for (let i=0; i<dataProducts.length; i++) {
       if (dataProducts[i].category1 === req.body.category | req.body.category === 'All') {
@@ -21,7 +25,7 @@ router.post('/list', function(req, res, next) {
 
 
 /* get products image.
-  Test URL: http://localhost:3050/product/image?productName=Tomatoes.jpg
+  Test URL: http://localhost:3050/api/product/image?productName=Tomatoes.jpg
 */
 router.post('/image', function(req, res, next) {
 
@@ -29,11 +33,6 @@ router.post('/image', function(req, res, next) {
   const pn = req.body.productName
   let url = `/public/images/products/${req.body.productName}`
   console.log(url)
-  // res.send({
-  //   err: 0,
-  //   msg: 'ok',
-  //   img: url
-  // })
   res.send(url)
 
   // http://localhost:3050/product/image?f=Asian%20Baby%20Bulk%20Choy.jpg
@@ -82,7 +81,7 @@ router.post('/image', function(req, res, next) {
 
 
 
-router.get('/list', function(req, res, next) {
+router.get('/plist', function(req, res, next) {
   const products = [
     {
         name: "Pork Loin",

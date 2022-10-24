@@ -5,12 +5,10 @@ var dataCustomer = require('./dataCustomers')
 
 // Mall API
 /* Customer login with account and password
-    Test URL: http://localhost:3050/customer/login?userName=customer1&password=customer1
+    Test URL: http://localhost:3050/api/customer/login?userName=customer1&password=customer1
 */
 router.post('/login', function(req, res, next) { 
-    
-    console.log(req.body)
-    // console.log(req.query)
+    console.log("(customer/login) req body:", req.body)
     var flag = false
     for (var i=0; i<dataCustomer.length; i++) {
         if (dataCustomer[i].userName === req.body.userName) {
@@ -37,11 +35,12 @@ router.post('/login', function(req, res, next) {
 });
 
 /* Customer register with account, password, email 
-    Test URL: http://localhost:3050/customer/register?userName=customer3&password=customer3&email='customer3@gmail.com
+    Test URL: http://localhost:3050/api/customer/register?userName=customer3&password=customer3&email='customer3@gmail.com
 */
 router.post('/register', function(req, res, next) { 
-    console.log(req.body.userName, req.body.password, req.body.email)
-    console.log(req.query)
+    console.log("(customer/register) req body:", req.body)
+    // console.log(req.body.userName, req.body.password, req.body.email)
+    // console.log(req.query)
     var isNewUser = true
     console.log(dataCustomer)
     for (var i=0; i<dataCustomer.length; i++) {
@@ -78,7 +77,10 @@ router.post('/register', function(req, res, next) {
 });
 
 
-/* get profile image. */
+/* 
+    get profile image.
+    
+    */
 router.post('/profileImage', function(req, res, next) {
 
     console.log("(/profileImage) req body:", req.body)

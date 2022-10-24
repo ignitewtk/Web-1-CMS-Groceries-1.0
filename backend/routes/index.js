@@ -10,6 +10,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/xxx', function(req, res, next) {
+  res.render('index', { title: 'api' });
+});
+
+router.get('/xxx/page1', function(req, res, next) {
+  res.render('index', { title: 'page1' });
+});
+
+
+router.get('/user/aaa', function(req, res, next) {
+  res.send('respond with a resource aaa in index');
+});
+
+router.get('/user', function(req, res, next) {
+  res.send('respond with a resource / in index');
+});
+
+
 module.exports = router;
 
 router.post('/files/add', function(req, res, next) {
