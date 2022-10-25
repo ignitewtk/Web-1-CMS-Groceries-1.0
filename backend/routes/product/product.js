@@ -31,7 +31,7 @@ router.post('/image', function(req, res, next) {
 
   console.log("(/image) req body:", req.body)
   const pn = req.body.productName
-  let url = `/public/images/products/${req.body.productName}`
+  let url = `http://192.168.1.4:3050/public/images/products/${req.body.productName}`
   console.log(url)
   res.send(url)
 
